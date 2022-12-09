@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Погода</string>
+    <string name="hours">ПО ЧАСАМ</string>
+    <string name="days">ПО ДНЯМ</string>
+</resources>
