@@ -1,4 +1,4 @@
-package com.devlab.weather.screens.mainscreen
+package com.devlab.weather.screens.mainscreen.view
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -13,20 +13,16 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.devlab.weather.R
-import com.devlab.weather.model.NetworkWeather
-import com.devlab.weather.model.WeatherModel
+import com.devlab.weather.screens.mainscreen.viewmodel.NetworkWeather
+import com.devlab.weather.screens.mainscreen.model.WeatherModel
 import com.google.accompanist.pager.ExperimentalPagerApi
 import com.google.accompanist.pager.HorizontalPager
 import com.google.accompanist.pager.pagerTabIndicatorOffset
 import com.google.accompanist.pager.rememberPagerState
-import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
-import kotlin.coroutines.coroutineContext
 
 @OptIn(ExperimentalPagerApi::class)
 @Composable

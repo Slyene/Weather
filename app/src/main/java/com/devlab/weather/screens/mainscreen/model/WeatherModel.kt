@@ -1,4 +1,4 @@
-package com.devlab.weather.model
+package com.devlab.weather.screens.mainscreen.model
 
 data class WeatherModel(
     val city: String = "",

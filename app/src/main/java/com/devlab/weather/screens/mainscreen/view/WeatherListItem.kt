@@ -1,4 +1,4 @@
-package com.devlab.weather.screens.mainscreen
+package com.devlab.weather.screens.mainscreen.view
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -14,7 +14,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
-import com.devlab.weather.model.WeatherModel
+import com.devlab.weather.screens.mainscreen.model.WeatherModel
 
 @Composable
 fun WeatherListItem(weatherItem: WeatherModel, currentDay: MutableState<WeatherModel>) {

@@ -1,26 +1,29 @@
-package com.devlab.weather.screens.mainscreen
+package com.devlab.weather.screens.mainscreen.view
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.MutableState
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
+import com.devlab.weather.MainActivity
 import com.devlab.weather.R
-import com.devlab.weather.model.WeatherModel
+import com.devlab.weather.screens.mainscreen.model.WeatherModel
 
 @Composable
-fun MainCard(currentDay: MutableState<WeatherModel>) {
+fun MainCard(
+    currentDay: MutableState<WeatherModel>,
+    onRefreshClick: () -> Unit,
+    onSearchClick: () -> Unit
+) {
     Box(
         modifier = Modifier
             .fillMaxWidth()
@@ -84,13 +87,13 @@ fun MainCard(currentDay: MutableState<WeatherModel>) {
             ) {
                 IconButton(
                     onClick = {
-
+                        onSearchClick.invoke()
                     }
                 ) {
                     Icon(
                         painter = painterResource(id = R.drawable.ic_baseline_search_24),
                         contentDescription = "search",
-                        tint = MaterialTheme.colors.onSurface
+                        tint = MaterialTheme.colors.onSurface,
                     )
                 }
                 Text(
@@ -104,7 +107,7 @@ fun MainCard(currentDay: MutableState<WeatherModel>) {
                 )
                 IconButton(
                     onClick = {
-
+                        onRefreshClick.invoke()
                     }
                 ) {
                     Icon(
